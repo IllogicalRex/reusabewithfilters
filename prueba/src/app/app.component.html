@@ -1,0 +1,28 @@
+<button (click)="abilith()">filters</button>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col" sortable="First" (sort)="onSort($event)">First</th>
+            <th scope="col" sortable="Last" (sort)="onSort($event)">Last</th>
+            <th scope="col" sortable="Handle" (sort)="onSort($event)">Handle</th>
+        </tr>
+        <tr *ngIf="!bandera" (keyup)="value(id.value, First.value,Last.value, Handle.value)">
+            <th>
+                <input type="text" #id>
+            </th>
+            <th><input type="text" #First></th>
+            <th><input type="text" #Last></th>
+            <th><input type="text" #Handle></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let c of countries">
+            <th>{{c.id}}</th>
+            <td>{{c.First}}</td>
+            <td>{{c.Last}}</td>
+            <td>{{c.Handle}}</td>
+        </tr>
+    </tbody>
+</table>
