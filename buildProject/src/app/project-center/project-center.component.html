@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <div class="page-header">
+        <h1>{{ title }}</h1>
+    </div>
+    <ct-table [records]="projects" [caption]="'NASA Projects'" (sendInput)="getInput($event)" [settings]="projectSettings">
+    </ct-table>
+    <ct-table [records]="people" (sendInput)="getInput($event)" [caption]="'NASA Astronauts'">
+    </ct-table>
+</div>

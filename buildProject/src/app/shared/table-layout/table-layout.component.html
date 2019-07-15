@@ -1,0 +1,20 @@
+<table class="table">
+    <caption *ngIf="caption">{{ caption }}</caption>
+    <thead>
+        <tr>
+            <th *ngFor="let map of columnMaps">{{ map.header }}</th>
+            <th><button (click)="abilith()">filters</button></th>
+        </tr>
+        <tr *ngIf="!bandera">
+            <th *ngFor="let map of columnMaps">
+                <input type="text" class="form-control" #hola (keyup)="sentInput(hola.value, map.primaryKey)" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let record of records">
+            <td *ngFor="let map of columnMaps">
+                {{ record[map.primaryKey] | formatCell }}</td>
+        </tr>
+    </tbody>
+</table>
